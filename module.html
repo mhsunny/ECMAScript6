@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+
+<script src="app.js" type="module"></script>
+
+<body>
+    Addition : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" value="0" id="numer1" size="10"> &nbsp; + &nbsp;
+    <input type="text" value="0" id="numer2" size="10">&nbsp; &nbsp; = &nbsp; &nbsp;
+    <span id="result" style="font-size: 32px; color: blue;">0</span> &nbsp; &nbsp;
+    <button onclick="sumNum()" style="font-size:18px;">Result</button>
+
+    <br> Substraction : &nbsp; &nbsp;
+    <input type="text" value="0" id="numer3" size="10"> &nbsp; - &nbsp;
+    <input type="text" value="0" id="numer4" size="10">&nbsp; &nbsp; = &nbsp; &nbsp;
+    <span id="result2" style="font-size: 32px; color: yellow;">0</span> &nbsp; &nbsp;
+    <button onclick="Substraction()" style="font-size:18px;">Result</button>
+
+    <br> Multiply : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" value="0" id="numer5" size="10"> &nbsp; * &nbsp;
+    <input type="text" value="0" id="numer6" size="10">&nbsp; &nbsp; = &nbsp; &nbsp;
+    <span id="result3" style="font-size: 32px; color: black;">0</span> &nbsp; &nbsp;
+    <button onclick="Multiply()" style="font-size:18px;">Result</button>
+
+
+    <br> Divided : &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <input type="text" value="0" id="numer7" size="10"> &nbsp; / &nbsp;
+    <input type="text" value="0" id="numer8" size="10">&nbsp; &nbsp; = &nbsp; &nbsp;
+    <span id="result4" style="font-size: 32px; color: purple;">0</span> &nbsp; &nbsp;
+    <button onclick="Divided()" style="font-size:18px;">Result</button>
+
+
+
+    <script>
+        function sumNum() {
+            var numer1 = parseInt(document.getElementById("numer1").value);
+            var numer2 = parseInt(document.getElementById("numer2").value);
+            //   console.log("Sum: " + numer1 + numer2);
+            document.getElementById("result").innerHTML = numer1 + numer2;
+        }
+
+        function Substraction() {
+            var numer3 = parseInt(document.getElementById("numer3").value);
+            var numer4 = parseInt(document.getElementById("numer4").value);
+            //console.log("Substraction: " + (numer3 - numer4));
+            document.getElementById("result2").innerHTML = numer3 - numer4;
+        }
+
+
+        function Multiply() {
+            var numer5 = parseInt(document.getElementById("numer5").value);
+            var numer6 = parseInt(document.getElementById("numer6").value);
+            // console.log("Substraction: " + numer4 + numer5);
+            document.getElementById("result3").innerHTML = numer5 * numer6;
+        }
+
+
+        function Divided() {
+            var numer7 = parseInt(document.getElementById("numer7").value);
+            var numer8 = parseInt(document.getElementById("numer8").value);
+            // console.log("Divided: " + numer7 + numer8);
+            document.getElementById("result4").innerHTML = numer7 / numer8;
+        }
+    </script>
+
+
+
+    <h2>JavaScript Module</h2>
+
+    <pre>
+
+        <p>math.js</p>
+            export {
+                sumAll as
+                default
+            };
+            
+            export {
+                sumAll,
+                subtractAll,
+                divideAll,
+                multiplyAll
+            };
+            
+            let sumAll = (a, b) => {
+                return a + b;
+            }
+            let subtractAll = (a, b) => {
+                return a - b;
+            }
+            let divideAll = (a, b) => {
+                return a / b;
+            }
+            let multiplyAll = (a, b) => {
+                return a * b;
+            }
+            let findModulus = (a, b) => {
+                return a % b;
+
+            <p>app.js</p>
+                
+            import * as math from './math.js';
+
+            console.log(math.multiplyAll(9, 8));
+
+             
+        
+    </pre>
+
+</body>
+
+</html>

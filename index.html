@@ -3,189 +3,243 @@
 
 <body>
 
-    <h2>JavaScript Class</h2>
+    <h2>Creating Objects and class
 
-    <p>In this example we demonstrate a simple class definition and how to use it.</p>
+    </h2>
 
-    <p id="demo"></p>
+    <pre>
+    <code> 'use strict'
+            class Polygon {
+                constructor(height, width) {
+                    this.h = height;
+                    this.w = width;
+                }
+                test() {
+                    console.log("The height of the polygon: ", this.h)
+                    console.log("The width of the polygon: ", this.w)
+                }
+            }
+    
+            //creating an instance  
+            var polyObj = new Polygon(10, 20);
+            polyObj.test();
+    
+            class Recrengel {
+    
+    
+                constructor(rwidth, rheight) {
+                    this.rw = rwidth;
+                    this, rh = rheight;
+    
+                }
+    
+                createRec() {
+                    console.log("The height of the polygon: ", this.rh)
+                    console.log("The width of the polygon: ", this.rw)
+                }
+    
+            }
+    
+    
+            //creating an instance  
+            var recObj = new Recrengel(100, 80);
+            myrec = recObj.createRec();
+            console.log("rectangle: " + myrec);
+        </code>
+    </pre>
+
 
     <script>
-        class Car {
-            constructor(brand) {
-                this.carname = brand;
+        'use strict'
+        class Polygon {
+            constructor(height, width) {
+                this.h = height;
+                this.w = width;
+            }
+            test() {
+                console.log("The height of the polygon: ", this.h)
+                console.log("The width of the polygon: ", this.w)
             }
         }
-        class Motor {
-            constructor(name) {
-                this.motorname = name;
+
+        //creating an instance  
+        var polyObj = new Polygon(10, 20);
+        polyObj.test();
+
+        console.log("rectangle: " + myrec);
+
+
+        class Recrengel {
+
+
+            constructor(rwidth, rheight) {
+                this.rw = rwidth;
+                this.rh = rheight;
+
+            }
+
+            createRec() {
+                //  console.log("The height of the polygon: ", this.rh)
+                // console.log("The width of the polygon: ", this.rw)
+                return this.rh * this.rw;
+            }
+
+        }
+
+
+        //creating an instance  
+        var recObj = new Recrengel(100, 80);
+        var myrec = recObj.createRec();
+        console.log("rectangle: " + myrec);
+    </script>
+
+
+    <script>
+        'use strict'
+        class PrinterClass {
+            doPrint() {
+                console.log("doPrint() from Parent called…")
             }
         }
-
-        mymotor = new Motor("General Motor");
-        mycar = new Car("Ford");
-
-        document.getElementById("demo").innerHTML = mymotor.motorname;
-    </script>
-
-    <h2>Array.find()</h2>
-
-
-    <p id="demo2"></p>
-
-    <script>
-        var numbers = [4, 9, 16, 25, 29];
-        var first = numbers.find(myFunction);
-
-        document.getElementById("demo2").innerHTML = "First number over 18 is " + first;
-
-        function myFunction(value, index, array) {
-            return value > 18;
+        class StringPrinter extends PrinterClass {
+            doPrint() {
+                super.doPrint()
+                console.log("doPrint() is printing a string…")
+            }
         }
+        var obj = new StringPrinter()
+        obj.doPrint()
     </script>
+    <h2>
+        Promises and Callbacks.
 
-    <h2>Number Object Properties</h2>
-
-    <p>MIN_SAFE_INTEGER</p>
-
-    <p id="demo3"></p>
-    <p>MAX_SAFE_INTEGER</p>
-
-    <p id="demo4"></p>
-    <script>
-        var y = Number.MIN_SAFE_INTEGER;
-        var x = Number.MAX_SAFE_INTEGER - 1;
-        document.getElementById("demo4").innerHTML = x;
-        document.getElementById("demo3").innerHTML = y;
-    </script>
-
-
-    <h2>JavaScript Number Methods</h2>
-
-    <p>The isInteger() method returns true if the argument is an integer.</p>
-    <p>Otherwise it returns false.</p>
-    Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
-    <p id="demo5"></p>
-
-    <script>
-        document.getElementById("demo5").innerHTML =
-            Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
-    </script>
-
-    <h2>JavaScript Number Methods</h2>
-
-    <p>The isSafeInteger() method returns true if the argument is a safe integer.</p>
-    <p>Otherwise it returns false.</p>
-    Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
-
-    <p id="demo6"></p>
-
-    <script>
-        document.getElementById("demo6").innerHTML =
-            Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
-    </script>
-
-    <h2>JavaScript Number Methods</h2>
-
-    <p>The isFinite() method returns false if the argument is Infinity or NaN.</p>
-    <p>Otherwise it returns true.</p>
-    isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
-
-    <p id="demo7"></p>
-
-    <script>
-        document.getElementById("demo7").innerHTML =
-            isFinite(10 / 0) + "<br>" + isFinite(10 / 1);
-    </script>
-
-    <h2>The ** Operator</h2>
-
-    <p id="demo8"></p>
-
-    <script>
-        var x = 10;
-        document.getElementById("demo8").innerHTML = x ** 2;
-    </script>
-
-
-
-    <h2>JavaScript Array.forEach()</h2>
-
-    <p>Calls a function once for each array element.</p>
-    var txt = "";</br>
-    var numbers = [45, 4, 9, 16, 25];</br>
-    numbers.forEach(myFunction);</br>
-    document.getElementById("demo10").innerHTML = txt;</br>
-    function myFunction(value) {</br>
-    txt = txt + value + "<br>"; }
-    </br>
-    <p id="demo10"></p>
-
-    <script>
-        var txt = "";
-        var numbers = [45, 4, 9, 16, 25];
-        numbers.forEach(myFunction);
-
-        document.getElementById("demo10").innerHTML = txt;
-
-        function myFunction(value) {
-            txt = txt + value + "<br>";
+    </h2>
+    <pre>
+        function notifyAll(fnSms, fnEmail) {
+            setTimeout(function() {
+                console.log('starting notification process');
+                fnSms();
+                fnEmail();
+            }, 2000);
         }
-    </script>
-
-
-    <h2>JavaScript Array.filter()</h2>
-
-    <p>Creates a new array with all array elements that passes a test.</p>
-
-    <p id="demo12"></p>
-
-    <script>
-        var numbers = [45, 4, 9, 16, 25];
-        var over18 = numbers.filter(myFunction);
-
-        document.getElementById("demo12").innerHTML = over18;
-
-        function myFunction(value, index, array) {
-            return array;
-        }
-    </script>
-
-    <h2>JavaScript Array.reduce()</h2>
-
-    <p>This example finds the sum of all numbers in an array:</p>
-    var sum = numbers.reduce(myFunction)<br> document.getElementById("demo").innerHTML = "The sum is " + sum
-    <br> function myFunction(total, value, index, array) {<br> return total + value<br> }
-    <br>
-    <p id="demo13"></p>
+        notifyAll(
+            function() {
+                console.log("Sms send ..");
+            },
+            function() {
+                console.log("email send ..");
+            }
+        );
+        console.log("End of script"); //executes first or not blocked by others
+        
+</pre>
 
     <script>
-        var numbers = [45, 4, 9, 16, 25];
-        var sum = numbers.reduce(myFunction);
-
-        document.getElementById("demo13").innerHTML = "The sum is " + sum;
-
-        function myFunction(total, value, index, array) {
-            return total + value;
+        function notifyAll(fnSms, fnEmail) {
+            setTimeout(function() {
+                console.log('starting notification process');
+                fnSms();
+                fnEmail();
+            }, 2000);
         }
+        notifyAll(
+            function() {
+                console.log("Sms send ..");
+            },
+            function() {
+                console.log("email send ..");
+            }
+        );
+        console.log("End of script"); //executes first or not blocked by others
     </script>
 
-    <h2>JavaScript Array.every()</h2>
 
-    <p>The every() method checks if all array values pass a test.</p>
-
-    <p id="demo14"></p>
+    <h2>Understanding Callback
+    </h2>
+    <pre>
+        <code>
+                function getSum(n1, n2) {
+                    var isAnyNegative = function() {
+                        return n1 < 0 || n2 < 0;
+                    }
+                    var promise = new Promise(function(resolve, reject) {
+                        if (isAnyNegative()) {
+                            reject(Error("Negatives not supported"));
+                        }
+                        resolve(n1 + n2);
+                    });
+                    return promise;
+                }
+                getSum(5, 6)
+                    .then(function(result) {
+                            console.log(result);
+                            return getSum(10, 20);
+                            //this returns another Promise   
+                        },
+                        function(error) {
+                            console.log(error);
+                        })
+                    .then(function(result) {
+                            console.log(result);
+                            return getSum(30, 40);
+                            //this returns another Promise   
+                        },
+                        function(error) {
+                            console.log(error);
+                        })
+                    .then(function(result) {
+                            console.log(result);
+                        },
+                        function(error) {
+                            console.log(error);
+                        });
+                console.log("End of script ");
+        </code>
+    </pre>
 
     <script>
-        var numbers = [45, 4, 9, 16, 25];
-        var allOver18 = numbers.every(myFunction);
-
-        document.getElementById("demo14").innerHTML = "All over 18 is " + allOver18;
-
-        function myFunction(value, index, array) {
-            return value > 18;
+        function getSum(n1, n2) {
+            var isAnyNegative = function() {
+                return n1 < 0 || n2 < 0;
+            }
+            var promise = new Promise(function(resolve, reject) {
+                if (isAnyNegative()) {
+                    reject(Error("Negatives not supported"));
+                }
+                resolve(n1 + n2);
+            });
+            return promise;
         }
+        getSum(5, 6)
+            .then(function(result) {
+                    console.log("1st res: " + result);
+                    return getSum(10, 20);
+                    //this returns another Promise   
+                },
+                function(error) {
+                    console.log("1st error: " + error);
+                })
+            .then(function(result) {
+                    console.log("2nd res: " + result);
+                    return getSum(30, -40);
+                    //this returns another Promise   
+                },
+                function(error) {
+                    console.log("2nd error: " + error);
+                })
+            .then(function(result) {
+                    console.log("3rd res: " + result);
+                },
+                function(error) {
+                    console.log("3rd error: " + error);
+                });
+        console.log("End of script ");
     </script>
 
+    <script>
+        import display_message from 'MessageModule.js'
+        display_message()
+    </script>
 </body>
 
 </html>
