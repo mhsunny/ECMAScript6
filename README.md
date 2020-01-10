@@ -102,7 +102,7 @@
             }
         );
         console.log("End of script"); //executes first or not blocked by others
-</pre>
+
     <script>
         function notifyAll(fnSms, fnEmail) {
             setTimeout(function() {
@@ -121,6 +121,8 @@
         );
         console.log("End of script"); //executes first or not blocked by others
     </script>
+
+</pre>
 
     #Understanding Callback
      
