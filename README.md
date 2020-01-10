@@ -1,8 +1,8 @@
 "# ECMAScript6 - The Basic of ES6"
 
-   
+   #Creating Objects and class 
     <pre>
-    #Creating Objects and class 
+    
  
     <code> 'use strict'
             class Polygon {
